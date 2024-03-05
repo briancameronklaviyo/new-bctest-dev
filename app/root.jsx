@@ -16,7 +16,6 @@ import favicon from '../public/favicon.svg';
 import resetStyles from './styles/reset.css';
 import appStyles from './styles/app.css';
 import {Layout} from '~/components/Layout';
-import tailwindCss from './styles/tailwind.css';
 
 /**
  * This is important to avoid re-fetching root queries on sub-navigations
@@ -38,7 +37,6 @@ export const shouldRevalidate = ({formMethod, currentUrl, nextUrl}) => {
 
 export function links() {
   return [
-    {rel: 'stylesheet', href: tailwindCss},
     {rel: 'stylesheet', href: resetStyles},
     {rel: 'stylesheet', href: appStyles},
     {
