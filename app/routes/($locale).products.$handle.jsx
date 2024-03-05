@@ -1,6 +1,8 @@
 import {Suspense} from 'react';
 import {defer, redirect} from '@shopify/remix-oxygen';
 import {Await, Link, useLoaderData} from '@remix-run/react';
+import {trackViewedProduct, trackAddedToCart} from '~/components/Onsite';
+import { useEffect } from "react";
 
 import {
   Image,
@@ -106,6 +108,14 @@ export default function Product() {
   /** @type {LoaderReturnData} */
   const {product, variants} = useLoaderData();
   const {selectedVariant} = product;
+
+  // Execute VP on page load
+
+  useEffect(() => {
+    trackViewedProduct(product);
+  },[]);
+
+
   return (
     <div className="product">
       <ProductImage image={selectedVariant?.image} />
@@ -220,6 +230,12 @@ function ProductPrice({selectedVariant}) {
  * }}
  */
 function ProductForm({product, selectedVariant, variants}) {
+
+  // define atc
+    const handleAtc = function () {
+    trackAddedToCart(product)
+  }
+
   return (
     <div className="product-form">
       <VariantSelector
@@ -233,6 +249,7 @@ function ProductForm({product, selectedVariant, variants}) {
       <AddToCartButton
         disabled={!selectedVariant || !selectedVariant.availableForSale}
         onClick={() => {
+          handleAtc();
           window.location.href = window.location.href + '#cart-aside';
         }}
         lines={
