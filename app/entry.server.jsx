@@ -24,6 +24,9 @@ export default async function handleRequest(
     ],
     connectSrc: [
       "*"
+    ],
+    fontSrc: [
+      "*"
     ]
   });
 
