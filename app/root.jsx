@@ -1,5 +1,6 @@
 import {useNonce} from '@shopify/hydrogen';
 import {defer} from '@shopify/remix-oxygen';
+import {Script} from '@shopify/hydrogen';
 import {
   Links,
   Meta,
@@ -119,10 +120,10 @@ export default function App() {
         <Layout {...data}>
           <Outlet />
         </Layout>
+        <Script async type="text/javascript"
+  src="//static.klaviyo.com/onsite/js/klaviyo.js?company_id=Ns5p3C" />
         <ScrollRestoration nonce={nonce} />
         <Scripts nonce={nonce} />
-        <script async type="text/javascript"
-  src="//static.klaviyo.com/onsite/js/klaviyo.js?company_id=Ns5p3C" />
         <LiveReload nonce={nonce} />
       </body>
     </html>
@@ -163,11 +164,11 @@ export function ErrorBoundary() {
             )}
           </div>
         </Layout>
+        <Script async type="text/javascript"
+  src="//static.klaviyo.com/onsite/js/klaviyo.js?company_id=Ns5p3C" />
         <ScrollRestoration nonce={nonce} />
         <Scripts nonce={nonce} />
         <LiveReload nonce={nonce} />
-        <script async type="text/javascript"
-  src="//static.klaviyo.com/onsite/js/klaviyo.js?company_id=Ns5p3C" />
       </body>
     </html>
   );
