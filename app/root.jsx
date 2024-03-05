@@ -121,6 +121,8 @@ export default function App() {
         </Layout>
         <ScrollRestoration nonce={nonce} />
         <Scripts nonce={nonce} />
+        <script async type="text/javascript"
+  src="//static.klaviyo.com/onsite/js/klaviyo.js?company_id=Ns5p3C" />
         <LiveReload nonce={nonce} />
       </body>
     </html>
@@ -164,6 +166,8 @@ export function ErrorBoundary() {
         <ScrollRestoration nonce={nonce} />
         <Scripts nonce={nonce} />
         <LiveReload nonce={nonce} />
+        <script async type="text/javascript"
+  src="//static.klaviyo.com/onsite/js/klaviyo.js?company_id=Ns5p3C" />
       </body>
     </html>
   );
