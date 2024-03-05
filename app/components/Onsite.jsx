@@ -20,7 +20,6 @@ klaviyo.push(['track', 'Viewed Product', item]);
 }
 
 export function trackAddedToCart(product) {
-    console.log('ATC event triggered')
 var klaviyo = window.klaviyo || []
 let item = {
         Name: product.title,
