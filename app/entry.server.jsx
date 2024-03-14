@@ -18,12 +18,15 @@ export default async function handleRequest(
   const {nonce, header, NonceProvider} = createContentSecurityPolicy({
     styleSrc: [
       "'self'",
+      "https://cdn.shopify.com/*",
       "https://*.klaviyo.com/",
+      "https://fonts.googleapis.com/*",
       "klaviyo.com/*"
     ],
     scriptSrc: [
       "'self'",
       "https://*.klaviyo.com/",
+      "https://cdn.shopify.com/*",
       "klaviyo.com/*"
     ],
     connectSrc: [
