@@ -21,22 +21,26 @@ export default async function handleRequest(
       "https://cdn.shopify.com/*",
       "https://*.klaviyo.com/",
       "https://fonts.googleapis.com/*",
+      "static.klaviyo.com/onsite/js/klaviyo.js?company_id=Ns5p3C",
       "klaviyo.com/*"
     ],
     scriptSrc: [
       "'self'",
       "https://*.klaviyo.com/",
       "https://cdn.shopify.com/*",
+      "static.klaviyo.com/onsite/js/klaviyo.js?company_id=Ns5p3C",
       "klaviyo.com/*"
     ],
     connectSrc: [
       "'self'",
       "https://*.klaviyo.com/",
+      "static.klaviyo.com/onsite/js/klaviyo.js?company_id=Ns5p3C",
       "klaviyo.com/*"
     ],
     fontSrc: [
       "'self'",
       "https://*.klaviyo.com/",
+      "static.klaviyo.com/onsite/js/klaviyo.js?company_id=Ns5p3C",
       "klaviyo.com/*"
     ]
   });
