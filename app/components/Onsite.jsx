@@ -1,7 +1,4 @@
 export function trackViewedProduct(product) {
-    console.log(product)
-
-
     let klaviyo = window.klaviyo || [];
     let item = {
         Name: product.title,
@@ -9,10 +6,16 @@ export function trackViewedProduct(product) {
         ImageURL: product.selectedVariant.image.url,
         Handle: product.handle,
         Brand: product.vendor,
-        Price: product.selectedVariant.price.amount
+        Price: product.selectedVariant.price.amount,
+        Metadata: {
+          Brand: product.vendor,
+          Price: product.selectedVariant.unitPrice,
+          CompareAtPrice: payload.selectedVariant.compareAtPriceV2.amount,
+        }
 };
 klaviyo.push(['track', 'Hydrogen Viewed Product', item]);
-console.log(product)
+klaviyo.push(['trackViewedItem', item]);
+
 
 }
 
