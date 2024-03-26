@@ -11,7 +11,6 @@ export function trackViewedProduct(product) {
         Brand: product.vendor,
         Price: product.selectedVariant.price.amount
 };
-console.log(product)
 klaviyo.push(['track', 'Hydrogen Viewed Product', item]);
 
 }
