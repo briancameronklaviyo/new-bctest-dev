@@ -10,13 +10,13 @@ export function trackViewedProduct(product) {
         Metadata: {
           Brand: product.vendor,
           Price: product.selectedVariant.unitPrice,
-          CompareAtPrice: payload.selectedVariant.compareAtPriceV2.amount,
+          CompareAtPrice: product.selectedVariant.compareAtPrice,
         }
 };
 klaviyo.push(['track', 'Hydrogen Viewed Product', item]);
 klaviyo.push(['trackViewedItem', item]);
-
-
+console.log(product.selectedVariant.id.substring(product.selectedVariant.id.lastIndexOf('/') + 1))
+console.log(product)
 }
 
 export function trackAddedToCart(product) {
